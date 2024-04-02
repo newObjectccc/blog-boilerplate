@@ -52,7 +52,6 @@ const openSourceList = [
 
 export default function Sidepanel() {
   const selectedLayoutSegment = useSelectedLayoutSegment();
-  console.log("🚀 ~ Sidepanel ~ selectedLayoutSegment:", selectedLayoutSegment);
   return (
     <aside className="scrollable-area relative w-full flex-col text-sm hidden bg-zinc-50 p-3 lg:flex lg:flex-col lg:border-r lg:w-60 xl:w-72">
       <div className="mb-4 p-2 flex flex-row flex-nowrap gap-2">
@@ -61,7 +60,7 @@ export default function Sidepanel() {
           <AvatarFallback>vesper</AvatarFallback>
         </Avatar>
         <div>
-          <h1 className="font-semibold tracking-tight">Vesper</h1>
+          <h1 className="font-semibold tracking-tight">Vesper@之一</h1>
           <p className="text-gray-600">Front-End Engineer</p>
         </div>
       </div>

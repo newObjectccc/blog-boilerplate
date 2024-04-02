@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(inter.className, "min-h-screen bg-white lg:flex")}>
         <Sidepanel></Sidepanel>
-        <div>{children}</div>
+        <div className="flex flex-1">{children}</div>
       </body>
     </html>
   );
