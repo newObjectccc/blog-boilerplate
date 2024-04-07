@@ -70,17 +70,17 @@ document.cookie = `access-token=123;expires=Tue, 19 Jan 2038 03:14:07 GMT;path=/
 
 可以看到 cookie 有很多属性，下面我画个表简单介绍一下(Partition Key 和 Priority 不是 cookie 的标准属性，估计是 chrome 的自定义属性)
 
-| 属性名   | 定义的行为                                                                                                                                                   |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Name     | Cookie 的名称。它用于在存储和获取 Cookie 时进行识别。                                                                                                        |
-| Value    | Cookie 的值。它可以是任意字符串，用于存储相关数据。                                                                                                          |
-| Expires  | Cookie 的过期时间。它指定了 Cookie 何时过期。可以使用 expires 字段来设置过期时间的日期和时间。                                                               |
-| Max-Age  | 指定 Cookie 的最大生命周期，以秒为单位。相对于 Expires 字段，Max-Age 是一个相对值，表示 Cookie 将在指定秒数后过期。                                          |
-| Domain   | 指定可以访问 Cookie 的域名。默认情况下，Cookie 只在设置它的域名和子域名下可见指定可以访问 Cookie 的域名。默认情况下，Cookie 只在设置它的域名和子域名下可见。 |
-| Path     | 指定可以访问 Cookie 的路径。默认情况下，Cookie 只在设置它的路径及其子路径下可见。                                                                            |
-| Secure   | 指示 Cookie 是否只能通过 HTTPS 传输。当 Secure 字段被设置为 true 时，Cookie 将只在安全连接下传输（HTTPS）。                                                  |
-| HttpOnly | 指示 Cookie 是否只能通过 HTTP 来访问。当 HttpOnly 字段被设置为 true 时，JavaScript 无法访问该 Cookie，这有助于防止某些形式的跨站点脚本攻击。                 |
-| SameSite | 用于控制 Cookie 的跨站点行为。它可以帮助防止某些安全攻击，特别是跨站点请求伪造（CSRF）攻击。                                                                 |
+| 属性名   | 定义的行为                                                                                                                                   |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name     | Cookie 的名称。它用于在存储和获取 Cookie 时进行识别。                                                                                        |
+| Value    | Cookie 的值。它可以是任意字符串，用于存储相关数据。                                                                                          |
+| Expires  | Cookie 的过期时间。它指定了 Cookie 何时过期。可以使用 expires 字段来设置过期时间的日期和时间。                                               |
+| Max-Age  | 指定 Cookie 的最大生命周期，以秒为单位。相对于 Expires 字段，Max-Age 是一个相对值，表示 Cookie 将在指定秒数后过期。                          |
+| Domain   | 指定可以访问 Cookie 的域名。默认情况下，Cookie 只在设置它的域名和子域名下可见                                                                |
+| Path     | 指定可以访问 Cookie 的路径。默认情况下，Cookie 只在设置它的路径及其子路径下可见。                                                            |
+| Secure   | 指示 Cookie 是否只能通过 HTTPS 传输。当 Secure 字段被设置为 true 时，Cookie 将只在安全连接下传输（HTTPS）。                                  |
+| HttpOnly | 指示 Cookie 是否只能通过 HTTP 来访问。当 HttpOnly 字段被设置为 true 时，JavaScript 无法访问该 Cookie，这有助于防止某些形式的跨站点脚本攻击。 |
+| SameSite | 用于控制 Cookie 的跨站点行为。它可以帮助防止某些安全攻击，特别是跨站点请求伪造（CSRF）攻击。                                                 |
 
 注意 Domain 这个属性，这就是咱们这次用来填坑的东西，要实现 a.abc.com 和 b.abc.com 的登录状态保持，就是通过设置 cookie 中的 domain 来实现的。
 

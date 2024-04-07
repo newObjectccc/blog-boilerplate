@@ -6,9 +6,9 @@ export default function Writing({ params }: { params: { slug: string } }) {
   let { slug } = params;
   slug = decodeURIComponent(slug);
   return (
-    <main className="flex h-screen w-full box-border">
-      <div className="overflow-y-auto relative w-full flex-col hidden bg-zinc-50 lg:flex lg:flex-col lg:border-r lg:w-80 xl:w-96">
-        <div className="sticky top-0 z-10 border-b bg-zinc-50 px-5 py-3 text-sm font-semibold tracking-tight">
+    <main className="flex w-full h-screen box-border">
+      <div className="overflow-y-auto flex-col hidden bg-zinc-50 lg:flex lg:flex-col lg:border-r flex-grow lg:max-w-96">
+        <div className="sticky top-0 z-10 border-b bg-zinc-50 px-5 py-4 text-sm font-semibold tracking-tight">
           Writing
         </div>
         <div className="bg-zinc-50 p-3">
@@ -39,7 +39,7 @@ export default function Writing({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </div>
-      <div className="pt-[6rem] px-[2rem] pb-[4rem] w-0 flex-1 overflow-y-auto">
+      <div className="pt-[6rem] h-fit sm:h-auto md:h-auto lg:h-auto px-[2rem] pb-[4rem] flex-[20] overflow-y-auto bg-white">
         <Markdown blogName={slug} />
       </div>
     </main>

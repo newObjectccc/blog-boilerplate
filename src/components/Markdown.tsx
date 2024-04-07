@@ -27,7 +27,7 @@ export async function getMdxResource(blogName: string) {
 const Markdown: React.FC<{ blogName: string }> = async ({ blogName }) => {
   const source = await getMdxResource(blogName);
   return (
-    <article className="prose flex-1">
+    <article className="prose prose-sm 2xl:max-w-3xl min-w-none max-w-none overflow-x-clip w-full my-0 mx-auto">
       <MDXRemote source={source} />
     </article>
   );
