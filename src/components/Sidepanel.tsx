@@ -18,7 +18,7 @@ import {
   Video,
 } from "lucide-react";
 import Link from "next/link";
-import { useSelectedLayoutSegment } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const navList = [
   {
@@ -51,9 +51,9 @@ const openSourceList = [
 ];
 
 export default function Sidepanel() {
-  const selectedLayoutSegment = useSelectedLayoutSegment();
+  const currentPathname = usePathname();
   return (
-    <aside className="scrollable-area relative w-full flex-col text-sm hidden bg-zinc-50 p-3 lg:flex lg:flex-col lg:border-r lg:w-60 xl:w-72">
+    <aside className="relative w-full flex-col text-sm hidden bg-zinc-50 p-3 lg:flex lg:flex-col lg:border-r lg:w-60 xl:w-72">
       <div className="mb-4 p-2 flex flex-row flex-nowrap gap-2">
         <Avatar>
           <AvatarImage src="/avatar.png" alt="vespser" />
@@ -66,8 +66,7 @@ export default function Sidepanel() {
       </div>
       <nav className="flex flex-col gap-1">
         {navList.map((navItem, index) => {
-          const isSelected =
-            (selectedLayoutSegment ?? "") === navItem.href.replace("/", "");
+          const isSelected = currentPathname === navItem.href;
           const commonClasses =
             "group flex items-center justify-between rounded-lg p-2";
           const selectedClasses = isSelected
@@ -75,7 +74,7 @@ export default function Sidepanel() {
             : "hover:bg-gray-200";
           const borderClasses = isSelected
             ? "border-gray-600 bg-gray-700 text-gray-200 group-hover:border-gray-600"
-            : "border-gray-200 bg-gray-100  text-gray-500  group-hover:border-gray-300";
+            : "border-gray-200 bg-gray-100 text-gray-500 group-hover:border-gray-300";
           return (
             <Link
               key={navItem.href}
@@ -86,7 +85,6 @@ export default function Sidepanel() {
                 {navItem.prefix}
                 <span className="ml-2 font-medium">{navItem.title}</span>
               </span>
-              <span className=" "></span>
               <span
                 className={`hidden h-5 w-5 place-content-center rounded border text-xs font-medium transition-colors duration-200 lg:grid ${borderClasses}`}
               >

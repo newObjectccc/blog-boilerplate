@@ -1,7 +1,8 @@
+@import "github-markdown-css/github-markdown.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -91,4 +92,8 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #636363;
+}
+
+* {
+  box-sizing: border-box;
 }

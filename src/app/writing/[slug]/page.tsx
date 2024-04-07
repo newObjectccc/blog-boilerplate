@@ -1,8 +1,11 @@
-import { getDocsList } from "@/components/Markdown";
+import Markdown, { getDocsList } from "@/components/Markdown";
 import Link from "next/link";
 
-export default function Writing() {
+export default function Writing({ params }: { params: { slug: string } }) {
   const docsList = getDocsList();
+  let { slug } = params;
+  slug = decodeURIComponent(slug);
+  console.log("🚀 ~ Writing ~ slug:", slug);
   return (
     <main className="flex h-screen w-full box-border">
       <div className="overflow-y-auto relative w-full flex-col hidden bg-zinc-50 lg:flex lg:flex-col lg:border-r lg:w-80 xl:w-96">
@@ -33,7 +36,9 @@ export default function Writing() {
           </div>
         </div>
       </div>
-      <div className="bg-dots bg-dots-size bg-dots-position flex-1"></div>
+      <div className="flex pt-[6rem] px-[2rem] pb-[4rem] flex-1 overflow-y-auto overflow-x-clip min-w-0 overflow-auto">
+        <Markdown blogName={slug} />
+      </div>
     </main>
   );
 }

@@ -3,10 +3,10 @@ import type { Config } from "tailwindcss";
 const config = {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{ts,tsx,md}",
-    "./components/**/*.{ts,tsx,md}",
-    "./app/**/*.{ts,tsx,md}",
-    "./src/**/*.{ts,tsx,md}",
+    "./pages/**/*.{ts,tsx,mdx}",
+    "./components/**/*.{ts,tsx,mdx}",
+    "./app/**/*.{ts,tsx,mdx}",
+    "./src/**/*.{ts,tsx,mdx}",
   ],
   prefix: "",
   theme: {
@@ -72,9 +72,18 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        dots: "radial-gradient(circle, #E5E7EB 1px, transparent 1px), radial-gradient(circle, #E5E7EB 1px, transparent 1px)",
+      },
+      backgroundSize: {
+        dots: "16px 16px",
+      },
+      backgroundPosition: {
+        dots: "2px, 2px, 2px 2px",
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;
 
 export default config;
