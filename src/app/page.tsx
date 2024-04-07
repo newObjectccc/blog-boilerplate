@@ -1,6 +1,10 @@
+import Markdown, { getDocsList } from "@/components/Markdown";
+
 export default function Index() {
+  const docsList = getDocsList();
+  console.log("🚀 ~ Index ~ docsList:", docsList);
   return (
-    <main className="flex min-h-screen w-full flex-col items-center overflow-y-auto justify-between py-24 px-8">
+    <main className="flex h-screen w-full box-border flex-col items-center overflow-y-auto justify-between py-24 px-8">
       <div className="w-full max-w-3xl my-0 mx-auto">
         <p className="mb-6">
           Hi~ I&apos;m Vesper. I&apos;m a Front-End engineer, sometime i wirte
@@ -15,6 +19,7 @@ export default function Index() {
           have been working in the field of front-end development for more than
           6 years.
         </p>
+        <Markdown filename="cookie和sso的情情爱爱"></Markdown>
       </div>
     </main>
   );

@@ -34,20 +34,20 @@ const navList = [
 ];
 
 const socialList = [
-  { title: "GitHub", href: "", prefix: <Github size={16} /> },
-  { title: "X (Twitter)", href: "", prefix: <Twitter size={16} /> },
-  { title: "Bilibili", href: "", prefix: <Flower size={16} /> },
+  { title: "GitHub", href: "1", prefix: <Github size={16} /> },
+  { title: "X (Twitter)", href: "2", prefix: <Twitter size={16} /> },
+  { title: "Bilibili", href: "3", prefix: <Flower size={16} /> },
 ];
 
 const openSourceList = [
-  { title: "V2G", href: "", prefix: <Video size={16} /> },
+  { title: "V2G", href: "4", prefix: <Video size={16} /> },
   {
     title: "BeautyCode",
-    href: "",
+    href: "5",
     prefix: <SquareDashedBottomCode size={16} />,
   },
-  { title: "Vtabs", href: "", prefix: <UnfoldVertical size={16} /> },
-  { title: "Bup", href: "", prefix: <Terminal size={16} /> },
+  { title: "Vtabs", href: "6", prefix: <UnfoldVertical size={16} /> },
+  { title: "Bup", href: "7", prefix: <Terminal size={16} /> },
 ];
 
 export default function Sidepanel() {
