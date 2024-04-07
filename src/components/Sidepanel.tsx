@@ -53,7 +53,7 @@ const openSourceList = [
 export default function Sidepanel() {
   const currentPathname = usePathname();
   return (
-    <aside className="relative w-full flex-col text-sm hidden bg-zinc-50 p-3 lg:flex lg:flex-col lg:border-r lg:w-60 xl:w-72">
+    <aside className="min-w-60 relative w-full flex-col text-sm hidden bg-zinc-50 p-3 lg:flex lg:flex-col lg:border-r lg:w-60 xl:w-72">
       <div className="mb-4 p-2 flex flex-row flex-nowrap gap-2">
         <Avatar>
           <AvatarImage src="/avatar.png" alt="vespser" />
@@ -66,7 +66,8 @@ export default function Sidepanel() {
       </div>
       <nav className="flex flex-col gap-1">
         {navList.map((navItem, index) => {
-          const isSelected = currentPathname === navItem.href;
+          const isSelected =
+            currentPathname.split("/")[1] === navItem.href.replace("/", "");
           const commonClasses =
             "group flex items-center justify-between rounded-lg p-2";
           const selectedClasses = isSelected

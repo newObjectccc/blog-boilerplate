@@ -18,11 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={cn(inter.className, "min-h-screen bg-white lg:flex w-dvw")}
-      >
-        <Sidepanel></Sidepanel>
-        <div className="flex flex-1">{children}</div>
+      <body className={cn(inter.className)}>
+        <main className="min-h-screen bg-white lg:flex">
+          <Sidepanel></Sidepanel>
+          <div className="flex flex-1">{children}</div>
+        </main>
       </body>
     </html>
   );
