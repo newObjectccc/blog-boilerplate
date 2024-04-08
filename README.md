@@ -1,10 +1,21 @@
 # blog-boilerplate
 
+> [!important]
+> 这是一个并没完全搭建完的模板，不过已经可用~
+
+## 
+
 - shadui
 - nextjs
 - framer-motion
 - supabase?
 - caddy?
+
+## deploy
+
+vercel =>
+
+vesper-blog.vercel.app
 
 ## Inspiration
 
