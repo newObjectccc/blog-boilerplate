@@ -4,7 +4,7 @@
 - nextjs
 - framer-motion
 - supabase?
-- caddy
+- caddy?
 
 ## Inspiration
 
