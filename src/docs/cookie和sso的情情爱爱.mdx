@@ -66,7 +66,7 @@ document.cookie = `access-token=123;expires=Tue, 19 Jan 2038 03:14:07 GMT;path=/
 
 然后进入到 Application 中去查看
 
-![1](https://github.com/newObjectccc/blog-boilerplate/assets/42132586/5fac4497-125d-424f-a6c1-dcfc986f5dd7)
+![image](https://github.com/newObjectccc/newObjectccc.github.io/assets/42132586/6e3e3fb6-34a1-4efc-9905-09caac22d483)
 
 可以看到 cookie 有很多属性，下面我画个表简单介绍一下(Partition Key 和 Priority 不是 cookie 的标准属性，估计是 chrome 的自定义属性)
 
@@ -128,7 +128,7 @@ _当你在公司项目中使用 cookie 来做登录状态等验证的时候，�
 - 身份提供者（Identity Provider，IdP）：负责认证用户的身份并生成令牌（Token）。也被称为身份验证服务提供商（Authentication Service Provider）。
 - 服务提供者（Service Provider，SP）：提供需要用户身份验证的应用程序或服务，依赖 SSO 系统进行用户身份验证。
 
-![1](https://github.com/newObjectccc/blog-boilerplate/assets/42132586/ff369234-ddbd-4ebd-9f67-03ee32cc63f4)
+![image](https://github.com/newObjectccc/newObjectccc.github.io/assets/42132586/a188c148-353c-427f-8fd6-904b7ed3627c)
 
 可以这么说，cookie 仅仅是可以用来实现一个非常简单的 SSO，且最好只用来实现跨子域的 SSO，如果提供三方，则会受到一些客户端安全策略的影响而导致失效。
 
