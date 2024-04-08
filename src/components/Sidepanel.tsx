@@ -34,20 +34,44 @@ const navList = [
 ];
 
 const socialList = [
-  { title: "GitHub", href: "1", prefix: <Github size={16} /> },
-  { title: "X (Twitter)", href: "2", prefix: <Twitter size={16} /> },
-  { title: "Bilibili", href: "3", prefix: <Flower size={16} /> },
+  {
+    title: "GitHub",
+    href: "https://github.com/newObjectccc",
+    prefix: <Github size={16} />,
+  },
+  {
+    title: "X (Twitter)",
+    href: "https://twitter.com/cccxy10086",
+    prefix: <Twitter size={16} />,
+  },
+  {
+    title: "Bilibili",
+    href: "https://space.bilibili.com/270440208?spm_id_from=333.1007.0.0",
+    prefix: <Flower size={16} />,
+  },
 ];
 
 const openSourceList = [
-  { title: "V2G", href: "4", prefix: <Video size={16} /> },
+  {
+    title: "V2G",
+    href: "https://vtog.vesper.host",
+    prefix: <Video size={16} />,
+  },
   {
     title: "BeautyCode",
-    href: "5",
+    href: "https://marketplace.visualstudio.com/items?itemName=Vesper.beautycode",
     prefix: <SquareDashedBottomCode size={16} />,
   },
-  { title: "Vtabs", href: "6", prefix: <UnfoldVertical size={16} /> },
-  { title: "Bup", href: "7", prefix: <Terminal size={16} /> },
+  {
+    title: "Vtabs",
+    href: "https://chromewebstore.google.com/detail/vtabs/ldjlkpemhoddnoedhbebgdncegooejim?hl=zh-CN&utm_source=ext_sidebar",
+    prefix: <UnfoldVertical size={16} />,
+  },
+  {
+    title: "Bup",
+    href: "https://www.npmjs.com/package/buildp",
+    prefix: <Terminal size={16} />,
+  },
 ];
 
 export default function Sidepanel() {
@@ -104,6 +128,7 @@ export default function Sidepanel() {
           <Link
             key={socialItem.href}
             href={socialItem.href}
+            target="_blank"
             className="group flex items-center justify-between rounded-lg p-2"
           >
             <span className="flex items-center">
@@ -123,6 +148,7 @@ export default function Sidepanel() {
           <Link
             key={openItem.href}
             href={openItem.href}
+            target="_blank"
             className="group flex items-center justify-between rounded-lg p-2"
           >
             <span className="flex items-center">
