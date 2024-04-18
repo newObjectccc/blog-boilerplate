@@ -68,6 +68,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cmdk": "^1.0.0",
+    "date-fns": "^3.6.0",
     "framer-motion": "^11.0.24",
     "github-markdown-css": "^5.5.1",
     "lucide-react": "^0.364.0",
@@ -97,8 +98,8 @@
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
