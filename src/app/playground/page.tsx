@@ -369,11 +369,29 @@ const PlateEditor: React.FC<PlateEditorProps> = (props) => {
       {
         id: "1",
         type: "p",
-        children: [{ text: "Hello, World!" }],
+        children: [
+          {
+            text: "Hello, World!",
+          },
+        ],
+      },
+      {
+        type: "media_embed",
+        url: "https://twitter.com/zbeyens/status/1677214892212776960",
+        children: [
+          {
+            text: "",
+          },
+        ],
+        id: "6km6m",
       },
     ],
-    onChange,
   } = props;
+
+  const onChange = (val: any) => {
+    console.log(val);
+  };
+
   return (
     <div className="w-full mx-8">
       <TooltipProvider>
@@ -390,7 +408,7 @@ const PlateEditor: React.FC<PlateEditorProps> = (props) => {
               </FixedToolbar>
 
               <Editor
-                className="max-h-[86svh] bg-white p-8 overflow-y-auto border border-gray-200 rounded-md shadow-sm"
+                className="sm:max-h-[80svh] md:max-h-[88svh] lg:max-h-[88svh] max-h-[86svh] bg-white p-8 overflow-y-auto border border-gray-200 rounded-md shadow-sm"
                 autoFocus
                 focusRing={false}
                 variant="ghost"
