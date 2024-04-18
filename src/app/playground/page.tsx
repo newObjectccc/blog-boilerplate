@@ -138,7 +138,6 @@ import { KbdLeaf } from "@/components/plate-ui/kbd-leaf";
 import { LinkElement } from "@/components/plate-ui/link-element";
 import { LinkFloatingToolbar } from "@/components/plate-ui/link-floating-toolbar";
 import { MediaEmbedElement } from "@/components/plate-ui/media-embed-element";
-import { MentionCombobox } from "@/components/plate-ui/mention-combobox";
 import { MentionElement } from "@/components/plate-ui/mention-element";
 import { MentionInputElement } from "@/components/plate-ui/mention-input-element";
 import { ParagraphElement } from "@/components/plate-ui/paragraph-element";
@@ -153,6 +152,7 @@ import { TodoListElement } from "@/components/plate-ui/todo-list-element";
 import { ToggleElement } from "@/components/plate-ui/toggle-element";
 import { TooltipProvider } from "@/components/plate-ui/tooltip";
 import { withDraggables } from "@/components/plate-ui/with-draggables";
+import { createSelectOnBackspacePlugin } from "@udecode/plate-select";
 
 const plugins = createPlugins(
   [
@@ -168,9 +168,14 @@ const plugins = createPlugins(
     createMediaEmbedPlugin(),
     createCaptionPlugin({
       options: {
-        pluginKeys: [
-          // ELEMENT_IMAGE, ELEMENT_MEDIA_EMBED
-        ],
+        pluginKeys: [ELEMENT_IMAGE, ELEMENT_MEDIA_EMBED],
+      },
+    }),
+    createSelectOnBackspacePlugin({
+      options: {
+        query: {
+          allow: [ELEMENT_IMAGE, ELEMENT_MEDIA_EMBED],
+        },
       },
     }),
     createMentionPlugin(),
@@ -354,32 +359,48 @@ const plugins = createPlugins(
   }
 );
 
-const initialValue = [
-  {
-    id: "1",
-    type: "p",
-    children: [{ text: "Hello, World!" }],
-  },
-];
-
-function PlateEditor() {
+interface PlateEditorProps {
+  initialValue?: any;
+  onChange?: (value: any) => void;
+}
+const PlateEditor: React.FC<PlateEditorProps> = (props) => {
+  const {
+    initialValue = [
+      {
+        id: "1",
+        type: "p",
+        children: [{ text: "Hello, World!" }],
+      },
+    ],
+    onChange,
+  } = props;
   return (
-    <div className="w-full h-full">
+    <div className="w-full mx-8">
       <TooltipProvider>
         <DndProvider backend={HTML5Backend}>
           <CommentsProvider users={{}} myUserId="1">
             {/** @ts-ignore */}
-            <Plate plugins={plugins} initialValue={initialValue}>
-              <FixedToolbar>
+            <Plate
+              plugins={plugins}
+              initialValue={initialValue}
+              onChange={onChange}
+            >
+              <FixedToolbar className="p-2 sticky top-1 border border-gray-200 rounded-md shadow-sm">
                 <FixedToolbarButtons />
               </FixedToolbar>
 
-              <Editor />
+              <Editor
+                className="max-h-[86svh] bg-white p-8 overflow-y-auto border border-gray-200 rounded-md shadow-sm"
+                autoFocus
+                focusRing={false}
+                variant="ghost"
+                size="md"
+              />
 
               <FloatingToolbar>
                 <FloatingToolbarButtons />
               </FloatingToolbar>
-              <MentionCombobox items={[]} />
+              {/* <MentionCombobox items={[]} /> */}
               <CommentsPopover />
             </Plate>
           </CommentsProvider>
@@ -387,6 +408,6 @@ function PlateEditor() {
       </TooltipProvider>
     </div>
   );
-}
+};
 
 export default PlateEditor;

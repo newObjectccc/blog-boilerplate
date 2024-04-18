@@ -16,6 +16,7 @@ import {
   ExternalLink,
   Eye,
   FileCode,
+  Film,
   GripVertical,
   Heading1,
   Heading2,
@@ -39,6 +40,7 @@ import {
   MoreHorizontal,
   Outdent,
   PaintBucket,
+  PenTool,
   Pilcrow,
   Plus,
   Quote,
@@ -242,6 +244,8 @@ export const Icons = {
   moon: Moon,
   sun: SunMedium,
   twitter: Twitter,
+  embed: Film,
+  excalidraw: PenTool,
 };
 
 export const iconVariants = cva("", {
