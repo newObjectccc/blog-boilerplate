@@ -159,7 +159,7 @@ export default function Stack() {
         Here is my go-to stack. I use these tools to build and maintain my
         projects.
       </div>
-      <ul className="mt-4 grid grid-cols-2 gap-1">
+      <ul className="mt-4 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1">
         {stackList.map((stackItem) => (
           <li key={stackItem.title} className="mb-1 flex last:mb-0">
             <Card className="flex-1 max-w-96">
