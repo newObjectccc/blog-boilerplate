@@ -359,11 +359,7 @@ const plugins = createPlugins(
   }
 );
 
-interface PlateEditorProps {
-  initialValue?: any;
-  onChange?: (value: any) => void;
-}
-const PlateEditor: React.FC<PlateEditorProps> = (props) => {
+const PlateEditor = (props: any) => {
   const {
     initialValue = [
       {
@@ -397,7 +393,7 @@ const PlateEditor: React.FC<PlateEditorProps> = (props) => {
       <TooltipProvider>
         <DndProvider backend={HTML5Backend}>
           <CommentsProvider users={{}} myUserId="1">
-            {/** @ts-ignore */}
+            {/* * @ts-ignore */}
             <Plate
               plugins={plugins}
               initialValue={initialValue}
