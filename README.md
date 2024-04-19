@@ -21,8 +21,6 @@
 - nextjs
 - framer-motion
 - platejs
-- supabase?
-- caddy?
 
 ## deploy
 
@@ -40,3 +38,5 @@ preview：[https://vesper-blog.vercel.app](https://vesper-blog.vercel.app)
 - opengraph-images.js in every page
 - loading.js
 - generateMetadata function in every page
+- supabase?
+- caddy?
